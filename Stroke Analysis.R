@@ -10,11 +10,12 @@ library(corrplot)
 
 
 ## Loading the Dataset
-healthcare.dataset.stroke.data <- read.csv("C:/data/healthcare-dataset-stroke-data.csv")
-View(healthcare.dataset.stroke.data)
+HD <- read.csv("healthcare-dataset-stroke-data.csv")
+names (HD)[3]<-"age"
+names (HD)[9]<-"Glucose"
+h <- hist(HD$Glucose, main = "Histogram of Avg Glucose")
 
-
-
+cor.test(HD$Glucose, HD$age, method="spearman")  
 ## Data Exploration
 str(healthcare_data)
 summary(healthcare.dataset.stroke.data)
