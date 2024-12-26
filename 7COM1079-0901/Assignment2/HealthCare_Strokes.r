@@ -18,3 +18,9 @@ p <- ggplot(stroke_data, aes(x = factor(stroke), y = avg_glucose_level, fill = f
        y = "Average Glucose Levels (mg/dL)") +  # Add labels for title and axes
   theme_minimal() +  # Use a clean theme
   scale_x_discrete(labels = c("No Stroke", "Stroke"))  # Custom labels for stroke groups
+
+# Convert the static ggplot to an interactive plot using Plotly
+interactive_plot <- ggplotly(p)
+
+# Display the interactive plot
+interactive_plot
