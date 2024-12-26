@@ -32,3 +32,8 @@ table_hyp <- table(stroke_data$hypertension, stroke_data$stroke)
 # Perform Chi-square test
 chi_square_result <- chisq.test(table_hyp)
 print(chi_square_result)
+
+# T-test for average glucose levels by stroke occurrence
+# Compare means between stroke (1) and non-stroke (0) groups
+t_test_result <- t.test(avg_glucose_level ~ stroke, data = stroke_data)
+print(t_test_result)
