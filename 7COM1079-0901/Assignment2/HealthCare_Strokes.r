@@ -24,3 +24,11 @@ interactive_plot <- ggplotly(p)
 
 # Display the interactive plot
 interactive_plot
+
+# Chi-square test for hypertension and stroke
+# Create a contingency table
+table_hyp <- table(stroke_data$hypertension, stroke_data$stroke)
+
+# Perform Chi-square test
+chi_square_result <- chisq.test(table_hyp)
+print(chi_square_result)
